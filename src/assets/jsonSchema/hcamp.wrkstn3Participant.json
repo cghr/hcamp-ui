@@ -1,0 +1,1482 @@
+{
+"schemaName":"hcamp.wrkstn3Participant",
+"onSave":"hcamp.wrkstn3",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"wrkstn3",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"memberId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.memberId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Body Impedance",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"pacemakerStatus",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Has a pacemaker ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"pregnantStatus",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Is pregnant",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"Unsure","value":"Unsure"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'"}
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"bodyCompositionMethod",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Body composition method",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+            {"text":"Direct entry","value":"Direct entry"},
+        
+            {"text":"Manual entry of full results","value":"Manual entry of full results"},
+        
+            {"text":"Manual measurement of weight only","value":"Manual measurement of weight only"},
+        
+            {"text":"Not performed ","value":"Not performed "}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"manualWtMeasurement",
+        "type":"text",
+        "valdn":"required",
+        "label":"Manual measurement of weight ",
+        "flow":"data.pacemakerStatus=='Yes' || data.pregnantStatus=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"skipBiMeasure",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Why Body Impedance not performed ",
+        "flow":"data.bodyCompositionMethod=='Not performed'",
+        "value":"",
+        "items":[
+        
+            {"text":"Wheelchair-bound","value":"Wheelchair-bound"},
+        
+            {"text":"An amputee","value":"An amputee"},
+        
+            {"text":"Unable to grip handles of the Tanita analyser","value":"Unable to grip handles of the Tanita analyser"},
+        
+            {"text":"Unable to stand","value":"Unable to stand"},
+        
+            {"text":"Not willing to remove their shoes","value":"Not willing to remove their shoes"},
+        
+            {"text":"Wearing a plaster cast","value":"Wearing a plaster cast"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"customerid",
+        "type":"text",
+        "valdn":"number,rangelength[11:11],required",
+        "label":"CUSTOMERID",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"sex",
+        "type":"text",
+        "valdn":"required",
+        "label":"SEX",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"patnr",
+        "type":"text",
+        "valdn":"required",
+        "label":"PATNR",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"datetime",
+        "type":"text",
+        "valdn":"required",
+        "label":"DATETIME",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"model",
+        "type":"text",
+        "valdn":"required",
+        "label":"MODEL",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"flag",
+        "type":"text",
+        "valdn":"required",
+        "label":"FLAG",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"condition1",
+        "type":"text",
+        "valdn":"required",
+        "label":"CONDITION",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"btyp",
+        "type":"text",
+        "valdn":"required",
+        "label":"BTYP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"height",
+        "type":"text",
+        "valdn":"required",
+        "label":"HEIGHT",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"weight",
+        "type":"text",
+        "valdn":"required",
+        "label":"WEIGHT",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"clothes",
+        "type":"text",
+        "valdn":"required",
+        "label":"CLOTHES",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"bmi",
+        "type":"text",
+        "valdn":"required",
+        "label":"BMI",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fatp",
+        "type":"text",
+        "valdn":"required",
+        "label":"FATP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fatm",
+        "type":"text",
+        "valdn":"required",
+        "label":"FATM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"pmm",
+        "type":"text",
+        "valdn":"required",
+        "label":"PMM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"vfatl",
+        "type":"text",
+        "valdn":"required",
+        "label":"VFATL",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"bonem",
+        "type":"text",
+        "valdn":"required",
+        "label":"BONEM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"ffm",
+        "type":"text",
+        "valdn":"required",
+        "label":"FFM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"tbw",
+        "type":"text",
+        "valdn":"required",
+        "label":"TBW",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"ecw",
+        "type":"text",
+        "valdn":"required",
+        "label":"ECW",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"icw",
+        "type":"text",
+        "valdn":"required",
+        "label":"ICW",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"bmr",
+        "type":"text",
+        "valdn":"required",
+        "label":"BMR",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"dci",
+        "type":"text",
+        "valdn":"required",
+        "label":"DCI",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"pal",
+        "type":"text",
+        "valdn":"required",
+        "label":"PAL",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"metaage",
+        "type":"text",
+        "valdn":"required",
+        "label":"METAAGE",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"rlfatp",
+        "type":"text",
+        "valdn":"required",
+        "label":"RLFATP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"rlfatm",
+        "type":"text",
+        "valdn":"required",
+        "label":"RLFATM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"rlffm",
+        "type":"text",
+        "valdn":"required",
+        "label":"RLFFM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"rlpmm",
+        "type":"text",
+        "valdn":"required",
+        "label":"RLPMM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"rlimp",
+        "type":"text",
+        "valdn":"required",
+        "label":"RLIMP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"llfatp",
+        "type":"text",
+        "valdn":"required",
+        "label":"LLFATP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"llfatm",
+        "type":"text",
+        "valdn":"required",
+        "label":"LLFATM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"llffm",
+        "type":"text",
+        "valdn":"required",
+        "label":"LLFFM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"llpmm",
+        "type":"text",
+        "valdn":"required",
+        "label":"LLPMM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"llimp",
+        "type":"text",
+        "valdn":"required",
+        "label":"LLIMP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"rafatp",
+        "type":"text",
+        "valdn":"required",
+        "label":"RAFATP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"rafatm",
+        "type":"text",
+        "valdn":"required",
+        "label":"RAFATM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"raffm",
+        "type":"text",
+        "valdn":"required",
+        "label":"RAFFM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"rapmm",
+        "type":"text",
+        "valdn":"required",
+        "label":"RAPMM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"raimp",
+        "type":"text",
+        "valdn":"required",
+        "label":"RAIMP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"lafatp",
+        "type":"text",
+        "valdn":"required",
+        "label":"LAFATP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"lafatm",
+        "type":"text",
+        "valdn":"required",
+        "label":"LAFATM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"laffm",
+        "type":"text",
+        "valdn":"required",
+        "label":"LAFFM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"lapmm",
+        "type":"text",
+        "valdn":"required",
+        "label":"LAPMM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"laimp",
+        "type":"text",
+        "valdn":"required",
+        "label":"LAIMP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"trfatp",
+        "type":"text",
+        "valdn":"required",
+        "label":"TRFATP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"trfatm",
+        "type":"text",
+        "valdn":"required",
+        "label":"TRFATM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"trffm",
+        "type":"text",
+        "valdn":"required",
+        "label":"TRFFM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"trpmm",
+        "type":"text",
+        "valdn":"required",
+        "label":"TRPMM",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"imp",
+        "type":"text",
+        "valdn":"required",
+        "label":"IMP",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"phaseangle",
+        "type":"text",
+        "valdn":"required",
+        "label":"PHASEANGLE ",
+        "flow":"data.pacemakerStatus=='No' && data.pregnantStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        }
+
+
+
+]
+}

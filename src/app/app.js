@@ -1,4 +1,5 @@
 angular.module("myApp", [
+        'myApp.hcamp',
         'chieffancypants.loadingBar',
         'ui.bootstrap',
         'cgForm',
@@ -14,13 +15,15 @@ angular.module("myApp", [
         'ui.router',
         'myApp.security',
         'myApp.report',
-        'myApp.enum',
-        'myApp.hc',
-        'myApp.resamp'
+        'toaster',
+        'sync',
+        'angularjs.media.directives',
+        'myApp.trackParticipant',
+        'phnInvitation'
     ])
     .config(function ($stateProvider, $urlRouterProvider) {
 
         //Todo add default landing page
-        $urlRouterProvider.otherwise('/enum/area');
+        $urlRouterProvider.otherwise('/hcamp/wrkstn/1');
 
     });

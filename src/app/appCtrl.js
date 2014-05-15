@@ -1,5 +1,5 @@
 angular.module('myApp')
-    .controller('AppController', function ($scope, $location, StateTransitions, $state, $stateParams, $rootScope, $log, AppService, $http, AppDefaultConfig, IDService) {
+    .controller('AppController', function (toaster, $scope, $location, StateTransitions, $state, $stateParams, $rootScope, $log, AppService, $http, AppDefaultConfig, IDService) {
 
         //Generalised Add New Item Function
         $scope.addNew = function () {
@@ -7,48 +7,61 @@ angular.module('myApp')
                 angular.forEach(StateTransitions, function (transition) {
                     if ($state.current.name === transition.from) {
                         $stateParams[transition.param] = data.id;
-                        $state.go(transition.to,$stateParams);
+                        $state.go(transition.to, $stateParams);
                         return;
                     }
                 });
-            },function(fail){
+            }, function (fail) {
 
                 angular.forEach(StateTransitions, function (transition) {
                     if ($state.current.name === transition.from) {
-                        $state.go(transition.to,$stateParams);
+                        $state.go(transition.to, $stateParams);
                         return;
                     }
                 });
             });
         };
-        //Handle Hospitalization Inf
-        $scope.hospInf=function(data){
-            if(data.hospStatus=='Yes'){
-                $state.go('enum.householdDetail.hosp',$stateParams);
-                $rootScope.hosp=data;
+        $scope.cleanUp = function () {
 
-            }
-            else{
-                $state.go('enum.householdDetail.deathInf',$stateParams);
-            }
+            AppService.cleanup().then(function () {
+
+                toaster.pop('success', '', 'Clean up success');
+            });
+        };
+        $scope.trackParticipant = function (wristBand) {
+
+            $location.url('/trackParticipant/' + wristBand);
         };
 
-        //Handle Death Inf
-        $scope.deathInf= function (data) {
 
-            if(data.deathStatus=='Yes'){
-                $state.go('enum.householdDetail.death',$stateParams);
-                $rootScope.death=data;
+    })
+    .controller('reportCardCtrl', function ($scope, AppService, $stateParams, $state) {
 
-            }
-            else{
-                $state.go('enum.houseDetail.household',$stateParams);
-            }
+        var memberId = $stateParams.memberId;
+        $scope.data = {};
+        AppService.getReportCardData(memberId).then(function (resp) {
+            console.log(resp.data);
+            $scope.data = resp.data;
+        });
+        $scope.reportCardUpdate = function () {
 
+            console.log('in report card update');
+            AppService.updateReportCardStatus(memberId).then(function () {
+                console.log('successful request');
+                $state.go('hcamp.wrkstn6');
+            });
         };
-        $rootScope.death={deathStatus:'Yes',deathCount:3};
-        $rootScope.hosp={hospStatus:'Yes',hospCount:3};
 
+    })
+    .controller('registrationCtrl', function (AppService, $stateParams, $scope) {
 
+        console.log('registration ctrl');
+        var memberId = $stateParams.memberId;
+        $scope.verificationdata = {};
+        AppService.getVerificationDetails(memberId).then(function (resp) {
 
+            console.log(resp.data);
+            $scope.verificationData = resp.data;
+
+        });
     });

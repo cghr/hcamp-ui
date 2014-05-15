@@ -1,11 +1,11 @@
 (function() {
     var config = {
-        roles: ['public', 'user', 'admin'],
+        roles: ['public', 'user', 'manager'],
         accessLevels: {
             'public': '*',
             'anon': ['public'],
-            'user': ['user', 'admin'],
-            'admin': ['admin']
+            'user': ['user', 'manager'],
+            'manager': ['manager']
         }
     };
     angular.module('routingConfig', ['ui.router'])

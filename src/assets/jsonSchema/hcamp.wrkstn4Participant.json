@@ -1,0 +1,792 @@
+{
+"schemaName":"hcamp.wrkstn4Participant",
+"onSave":"hcamp.wrkstn4",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"wrkstn4",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"memberId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.memberId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Spirometry",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"required",
+        "label":"Contra-Indications for Spirometry are \n 1.Chest infection in the last month (Influenza,Bronchitis,Severecold,Pneumonia) \n 2.History of detached retina\n3.Heart attack\n4.Surgery - Eye,Chest, Abdomen in last 3 months\n4.History of collapsed lung\n5.Pregnancy (Ist or 3rd trimester)\n6.Currently on medication Tuberculosis",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"contraIndicationStatus",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Any of contra-indications reported?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"Unsure","value":"Unsure"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"spContraind",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Contra-Indication reported (select one)",
+        "flow":"data.contraIndicationStatus=='Yes' || data.contraIndicationStatus=='Unsure'",
+        "value":"",
+        "items":[
+        
+            {"text":"Chest infection in the last month (Influenza,Bronchitis,Severecold,Pneumonia)","value":"Chest infection in the last month (Influenza,Bronchitis,Severecold,Pneumonia)"},
+        
+            {"text":"History of detached retina","value":"History of detached retina"},
+        
+            {"text":"Heart attack","value":"Heart attack"},
+        
+            {"text":"Surgery - Eye,Chest, Abdomen in last 3 months","value":"Surgery - Eye,Chest, Abdomen in last 3 months"},
+        
+            {"text":"History of collapsed lung","value":"History of collapsed lung"},
+        
+            {"text":"Pregnancy (Ist or 3rd trimester)","value":"Pregnancy (Ist or 3rd trimester)"},
+        
+            {"text":"Currently on medication Tuberculosis","value":"Currently on medication Tuberculosis"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Has participant had any of the following in the last hour:",
+        "flow":"data.contraIndicationStatus=='No'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"caffeineDrinks ",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Caffeine drinks (Coffee,Tea,Softdrinks,EnergyDrinks)? ",
+        "flow":"data.contraIndicationStatus=='No'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"chestInhaler",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Inhaler for chest?",
+        "flow":"data.contraIndicationStatus=='No'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"cigarette",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Cigarette/Bidis",
+        "flow":"data.contraIndicationStatus=='No'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"spMethod",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Spirometry method",
+        "flow":"data.contraIndicationStatus=='No'",
+        "value":"",
+        "items":[
+        
+            {"text":"Direct entry","value":"Direct entry"},
+        
+            {"text":"Manual","value":"Manual"},
+        
+            {"text":"Not performed - equipment failure","value":"Not performed - equipment failure"},
+        
+            {"text":"Not performed - other reason","value":"Not performed - other reason"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fev1_vc",
+        "type":"text",
+        "valdn":"required",
+        "label":"FEV1/VC",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fev1_fvc",
+        "type":"text",
+        "valdn":"required",
+        "label":"FEV1/FVC",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"pef",
+        "type":"text",
+        "valdn":"required",
+        "label":"PEF (Unit is described in unit field)",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"pef1",
+        "type":"text",
+        "valdn":"required",
+        "label":"PEF (Unit is described in unit field)",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fef0212",
+        "type":"text",
+        "valdn":"required",
+        "label":"FEF0.2-1.2",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fef25_75_fvc",
+        "type":"text",
+        "valdn":"required",
+        "label":"FEF25-75/FVC",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fef25",
+        "type":"text",
+        "valdn":"required",
+        "label":"FEF25",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fef50",
+        "type":"text",
+        "valdn":"required",
+        "label":"FEF50",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fef75",
+        "type":"text",
+        "valdn":"required",
+        "label":"FEF75",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fivc_fvc",
+        "type":"text",
+        "valdn":"required",
+        "label":"FIVC/FVC",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"pif",
+        "type":"text",
+        "valdn":"required",
+        "label":"PIF",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"pif",
+        "type":"text",
+        "valdn":"required",
+        "label":"PIF",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fif25",
+        "type":"text",
+        "valdn":"required",
+        "label":"FIF25",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fif50",
+        "type":"text",
+        "valdn":"required",
+        "label":"FIF50",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fif75",
+        "type":"text",
+        "valdn":"required",
+        "label":"FIF75",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fif50_fef50",
+        "type":"text",
+        "valdn":"required",
+        "label":"FIF50/FEF50",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"vext",
+        "type":"text",
+        "valdn":"required",
+        "label":"Vext",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"vext_fvc",
+        "type":"text",
+        "valdn":"required",
+        "label":"VExt/FVC",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"rawind",
+        "type":"text",
+        "valdn":"required",
+        "label":"RAWind",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        }
+
+
+
+]
+}

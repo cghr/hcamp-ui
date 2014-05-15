@@ -53,6 +53,30 @@
 
 
         {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
         "name":"",
         "type":"heading",
         "valdn":"",
@@ -101,7 +125,7 @@
 
 
         {
-        "name":"nameMother",
+        "name":"motherName",
         "type":"text",
         "valdn":"required",
         "label":"What is your mother's name?",
@@ -125,7 +149,7 @@
 
 
         {
-        "name":"stateMother",
+        "name":"motherState",
         "type":"suggest",
         "valdn":"required",
         "label":"What is the state of origin of your mother?",
@@ -219,7 +243,7 @@
 
 
         {
-        "name":"districtMother",
+        "name":"motherdistrict ",
         "type":"suggest",
         "valdn":"required",
         "label":"What is the district of origin of your Mother?",
@@ -1523,7 +1547,7 @@
 
 
         {
-        "name":"casteMother",
+        "name":"motherCaste",
         "type":"radio",
         "valdn":"required",
         "label":"What is the caste of your mother?",

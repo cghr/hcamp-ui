@@ -1,0 +1,69 @@
+<div class='container-fluid' id='reportCard' style='font-size:80;font-weight: bold' ng-controller="reportCardCtrl">
+
+    <div class='row-fluid well' style="font-weight:bold">
+        <div class='span2'></div>
+        <div class='span4'>
+
+            <div class='row'>
+                <img src="assets/images/tmh.jpg" width='150' height='80'/>
+
+                <div>
+                    <h4>Basic Information</h4>
+                    <table class='table table-bordered table-striped table-condensed'>
+                        <tr>
+                            <td>PHN</td>
+                            <td>{{data.phn}}</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>{{data.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td>{{data.age}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>{{data.gender}}</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+            <div class='row'>
+                <h4>Health Information</h4>
+                <table class='table table-bordered table-striped table-condensed'>
+                    <tr>
+                        <td>BP1-Systolic</td>
+                        <td>{{data.bpSystolic}}</td>
+                    </tr>
+                    <tr>
+                        <td>BP1-Diastolic</td>
+                        <td>{{data.bpDiastolic}}</td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td>{{data.height}}</td>
+                    </tr>
+                    <tr>
+                        <td>BMI</td>
+                        <td>{{data.bmi}}</td>
+                    </tr>
+                    <tr>
+                        <td>Waist Cirumference</td>
+                        <td>{{data.waistCircumference}}</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td>{{data.weight}}</td>
+                    </tr>
+                </table>
+                <a href=""  ng-click="reportCardUpdate()" class="btn btn-primary">Done</a>
+            </div>
+
+        </div>
+        <div class='span4'><img width="200" height="100" src="assets/photos/{{$stateParams.memberId}}.jpg"/></div>
+    </div>
+
+</div>

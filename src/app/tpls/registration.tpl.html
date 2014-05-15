@@ -1,0 +1,32 @@
+<div ng-controller="registrationCtrl">
+    <div class="span6">
+        <div>
+            <b> 1.What's your mother's name ?</b>
+            Ans.<span style="color:red">{{verificationData.motherName}}</span>
+            <label><input type="radio" ng-model="verification.mother" name="mother" value="yes">Yes</label>
+            <label><input type="radio" ng-model="verification.mother" name="mother" value="no">No</label>
+
+            <b> 2.What's your spouse's name ?</b>
+            Ans.<span style="color:red">{{verificationData.spouseName}}</span>
+            <label><input type="radio" ng-model="verification.spouse" name="spouse" value="yes">Yes</label>
+            <label><input type="radio" ng-model="verification.spouse" name="spouse" value="no">No</label>
+
+
+        </div>
+        <div ng-show="verification.spouse=='yes' && verification.mother=='yes'">
+            <survey-form></survey-form>
+        </div>
+
+    </div>
+    <div class="span6">
+        <div><img width="200" height="400" src="assets/photos/{{$stateParams.memberId}}.jpg"/></div>
+        <div ng-show="$state.includes('hcamp.wrkstn2Participant')">
+
+            <h4>Peak Flow Demonstration</h4>
+
+            <div>
+                <flash width="500" height="400" src="assets/videos/PeakFlow.swf"></flash>
+            </div>
+        </div>
+    </div>
+</div>

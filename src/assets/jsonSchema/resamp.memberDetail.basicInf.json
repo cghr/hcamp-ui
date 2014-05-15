@@ -53,6 +53,30 @@
 
 
         {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
         "name":"education",
         "type":"radio",
         "valdn":"required",
@@ -227,7 +251,7 @@
 
 
         {
-        "name":"casteMother",
+        "name":"motherCaste",
         "type":"radio",
         "valdn":"required",
         "label":"What is the caste of your mother?",

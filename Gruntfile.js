@@ -93,7 +93,9 @@ module.exports = function(grunt) {
                 'vendor/lib-plusAsTab/release/scripts/plusastab.joelpurra.js',
                 'vendor/gridLib/release/scripts/dhtmlx.js',
                 'vendor/cgGrid/dist/cgGrid.js',
-                'vendor/cgForm/dist/cgForm-tpls.js'
+                'vendor/cgForm/dist/cgForm-tpls.js',
+                'vendor/angularjs-media/angularjs.media.directives.annotate.js',
+                'vendor/angularjs.media.directive.js'
             ],
             css: [
             ],

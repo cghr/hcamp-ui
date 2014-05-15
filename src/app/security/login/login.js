@@ -17,6 +17,7 @@ angular.module('login', ['ui.router', 'auth', 'toaster','angular-md5'])
                     password: md5.createHash(user.password)
                 },
                 function (res) {
+                    $rootScope.user=res;
                     $location.path('/');
                 },
                 function (err) {

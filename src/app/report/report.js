@@ -23,11 +23,23 @@ angular.module('myApp.report', ['ui.router'])
                 items: [
                     {
                         id: 11,
-                        label: 'Areas'
+                        label: 'WrkStn1'
                     },
                     {
                         id: 12,
-                        label: 'Users'
+                        label: 'WrkStn2'
+                    },
+                    {
+                        id: 13,
+                        label: 'WrkStn3'
+                    },
+                    {
+                        id: 14,
+                        label: 'WrkStn4'
+                    },
+                    {
+                        id: 15,
+                        label: 'WrkStn5'
                     }
                 ]
             }

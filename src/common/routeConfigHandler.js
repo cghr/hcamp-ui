@@ -20,7 +20,7 @@ angular.module('routeConfigHandler', [])
         },
         getData: function (object, array, parentState) {
 
-            var prevObject=object.prevState;
+            var prevObject = object.prevState;
             var data = {
                 prev: prevObject,
                 children: object.children,

@@ -1,5 +1,5 @@
 angular.module('authService', ['routingConfig', 'authDefaultConfig'])
-    .factory('Auth', function($http, $cookieStore, routingConfig, AuthDefaultConfig) {
+    .factory('Auth', function($http, $cookieStore, routingConfig, AuthDefaultConfig,$rootScope) {
 
 
         var accessLevels = routingConfig.accessLevels(),
@@ -12,6 +12,7 @@ angular.module('authService', ['routingConfig', 'authDefaultConfig'])
             role: userRoles.public
         };
         currentUser = angular.fromJson(currentUser);
+        $rootScope.user=currentUser;
         $cookieStore.remove('user');
 
         function changeUser(user) {
@@ -31,7 +32,7 @@ angular.module('authService', ['routingConfig', 'authDefaultConfig'])
                     user = currentUser;
                 }
 
-                return user.role.title == userRoles.user.title || user.role.title == userRoles.admin.title;
+                return user.role.title == userRoles.user.title || user.role.title == userRoles.manager.title;
             },
             register: function(user, success, error) {
 

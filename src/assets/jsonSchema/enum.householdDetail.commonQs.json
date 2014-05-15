@@ -155,7 +155,9 @@
         
             {"text":"Kerosene","value":"Kerosene"},
         
-            {"text":"Solid fuel (Coal, wood, charcol etc)","value":"Solid fuel (Coal, wood, charcol etc)"}
+            {"text":"Coal ,Charcoal","value":"Coal ,Charcoal"},
+        
+            {"text":"Wood,cowdung , crop etc)","value":"Wood,cowdung , crop etc)"}
         
         ],
         "image":"",
@@ -239,38 +241,6 @@
 
 
         {
-        "name":"levelSmokiness",
-        "type":"radio",
-        "valdn":"required",
-        "label":"What is the level of smokiness due to cooking?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"No smokiness","value":"No smokiness"},
-        
-            {"text":"Little","value":"Little"},
-        
-            {"text":"Much, but not enough to irritate the eyes","value":"Much, but not enough to irritate the eyes"},
-        
-            {"text":"Smokiness enough to irritate the eyes","value":"Smokiness enough to irritate the eyes"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
         "name":"cookingPerson",
         "type":"lookup",
         "valdn":"required",
@@ -286,42 +256,6 @@
             "entity":"member",
             "field":"name",
             "ref":"householdId"
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"cookingOil",
-        "type":"radio",
-        "valdn":"required",
-        "label":"What kind of cooking oil is used in the household?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Gingelly Oil","value":"Gingelly Oil"},
-        
-            {"text":"Groundnut Oil","value":"Groundnut Oil"},
-        
-            {"text":"Mustartd Oil","value":"Mustartd Oil"},
-        
-            {"text":"Palm Oil","value":"Palm Oil"},
-        
-            {"text":"Sunflower oil","value":"Sunflower oil"},
-        
-            {"text":"Others","value":"Others"}
-        
-        ],
-        "image":"",
-        "lookup":{
         
         },
         "crossFlow":[

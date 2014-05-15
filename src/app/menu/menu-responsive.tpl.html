@@ -8,25 +8,36 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="#/">App Title</a>
+      <a class="brand" href="#/">Health Camp</a>
       <div class="nav-collapse" style="height: 0px;" collapse="isCollapsed">
         <ul class="nav">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-home icon-white'></i> Menu Section1 <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-home icon-white'></i> Workstations <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li class="nav-header">Menu Header</li>
-              <li><a href="#/item1">Menu Item1</a></li>
+              <li class="nav-header">Workstations</li>
+              <li><a href="#/hcamp/wrkstn/1">Registration</a></li>
+                <li><a href="#/hcamp/wrkstn/2">BP/Physical Measurements/Grip Strength</a></li>
+                <li><a href="#/hcamp/wrkstn/3">Body Impedance</a></li>
+                <li><a href="#/hcamp/wrkstn/4">Spirometry</a></li>
+                <li><a href="#/hcamp/wrkstn/5">Sample Collection</a></li>
+                <li><a href="#/hcamp/wrkstn/6">Report Card</a></li>
+
             </ul>
           </li>
-         
+            <li>
+                <a href='#/phnInvitation'><i class='icon-barcode icon-white'></i> PhnInvitation</a>
+            </li>
+            <li>
+                <a href='#/sync'><i class='icon-refresh icon-white'></i> Synchronize</a>
+            </li>
           <li>
             <a href='#/report/11'><i class='icon-book icon-white'></i> Reports</a>
           </li>
-           
+
           <!-- <li>
             <a href='' ng-click='sync()'><i class='icon-refresh icon-white'></i> Synchronize</a>
           </li> -->
-           <li access-level="accessLevels.admin">
+           <li access-level="accessLevels.manager">
             <a href='' ng-click='cleanUp()'><i class='icon-trash icon-white'></i> Cleanup</a>
           </li>
 
@@ -34,7 +45,7 @@
         <div >
           <p class='navbar-text pull-right'><a href='' ng-click='logout()' class='navbar-link'><i class='icon-off icon-white'></i> Logout</a></p>
         </div>
-        
+
       </div><!--/.nav-collapse -->
     </div>
   </div>

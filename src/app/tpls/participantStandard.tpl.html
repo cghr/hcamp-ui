@@ -1,0 +1,13 @@
+<div class="span6">
+    <standard-form></standard-form>
+</div>
+<div class="span6">
+    <div><img width="200" height="400" src="assets/photos/{{$stateParams.memberId}}.jpg" /></div>
+    <div ng-show="$state.includes('wrkstn2Participant')">
+
+        <h4>Peak Flow Demonstration</h4>
+        <video width="500" height="400" controls>
+            <source src="assets/videos/PeakFlow.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>

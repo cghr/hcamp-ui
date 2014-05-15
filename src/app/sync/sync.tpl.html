@@ -1,0 +1,23 @@
+<div ng-controller="syncCtrl">
+
+    <div class="row">
+        <div class="span2"></div>
+        <div class="span5">
+            Download
+            <progressbar class="progress-striped active" value="downloadProgress"
+                         type="info">
+                <i>{{downloadProgress}} %</i>
+            </progressbar>
+            Upload
+            <progressbar class="progress-striped active" value="uploadProgress"
+                         type="info"><i>{{uploadProgress}} %</i>
+            </progressbar>
+            Images Upload
+            <progressbar class="progress-striped active" value="fileUploadsProgress"
+                         type="info"><i>{{fileUploadProgress}} %</i>
+            </progressbar>
+        </div>
+
+    </div>
+
+</div>

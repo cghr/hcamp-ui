@@ -1,12 +1,10 @@
 <div class='container'>
-	<h4>
-        <span ng-show="$state.current.addNew">
-            <button  ng-click='addNew()' class='btn btn-info btn-small' autofocus="">
-                <i class='icon-plus-sign icon-white'></i> Add
-            </button>
-        </span>
+    <h4>
         {{$state.current.title}}
+        <input type="text" placeholder="Scan Barcode" autofocus ng-enter="scanBarcode(barcode)" ng-model="barcode"/>
+        <input type="text" placeholder="Track Participant" ng-enter="trackParticipant(wristBand)"
+               ng-model="wristBand"/>
     </h4>
-	<dhtmlx-grid></dhtmlx-grid>
+    <dhtmlx-grid></dhtmlx-grid>
 
 </div>

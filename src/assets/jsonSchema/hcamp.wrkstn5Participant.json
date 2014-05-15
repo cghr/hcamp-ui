@@ -1,0 +1,366 @@
+{
+"schemaName":"hcamp.wrkstn5Participant",
+"onSave":"hcamp.wrkstn5",
+"properties":[
+
+
+        {
+        "name":"datastore",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"wrkstn5",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"memberId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.memberId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"starttime",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"timestamp",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Blood Sample Collection",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"bloodSampleAttempt",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was blood sampling attempted?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"reasonNobld",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Reason blood sampling not attempted",
+        "flow":"data.bloodSampleAttempt=='No'",
+        "value":"",
+        "items":[
+        
+            {"text":"Declined","value":"Declined"},
+        
+            {"text":"Against participant wishes","value":"Against participant wishes"},
+        
+            {"text":"Lack of time","value":"Lack of time"},
+        
+            {"text":"Equipment failure","value":"Equipment failure"},
+        
+            {"text":"Malfunction","value":"Malfunction"},
+        
+            {"text":"Not available","value":"Not available"},
+        
+            {"text":"Unable","value":"Unable"},
+        
+            {"text":"Other health reason","value":"Other health reason"},
+        
+            {"text":"Reason not stated","value":"Reason not stated"},
+        
+            {"text":"Moved arm","value":"Moved arm"},
+        
+            {"text":"Poor venous access/flow","value":"Poor venous access/flow"},
+        
+            {"text":"Recently donated blood","value":"Recently donated blood"},
+        
+            {"text":"Abandoned","value":"Abandoned"},
+        
+            {"text":"Feeling unwell/pain","value":"Feeling unwell/pain"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"fastTime",
+        "type":"text",
+        "valdn":"between[1:20],required",
+        "label":"Time since last meal or drink (except plain water) (hours)",
+        "flow":"data.bloodSampleAttempt=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"barcodeBloodTube",
+        "type":"text",
+        "valdn":"number,rangelength[11:11],required",
+        "label":"Scan barcode on collected blood sample tube",
+        "flow":"data.bloodSampleAttempt=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"volumeBlood",
+        "type":"text",
+        "valdn":"between[1:10],required",
+        "label":"Volume of blood",
+        "flow":"data.bloodSampleAttempt=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Nail Sample Collection",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"nailSampleAttempt",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was nail sampling attempted?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes"},
+        
+            {"text":"No","value":"No"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"reasonNoNail",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Reason nail sampling not attempted",
+        "flow":"data.nailSampleAttempt=='No'",
+        "value":"",
+        "items":[
+        
+            {"text":"Declined","value":"Declined"},
+        
+            {"text":"Against participant wishes","value":"Against participant wishes"},
+        
+            {"text":"Lack of time","value":"Lack of time"},
+        
+            {"text":"Feeling unwell","value":"Feeling unwell"},
+        
+            {"text":"Other health reason","value":"Other health reason"}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        },
+
+
+
+        {
+        "name":"barcodeCryovial",
+        "type":"text",
+        "valdn":"number,rangelength[11:11],required",
+        "label":"Scan barcode on collected nail sample cyrovial",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        }
+        }
+
+
+
+]
+}

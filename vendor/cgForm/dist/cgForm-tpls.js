@@ -2,7 +2,7 @@
  * cgForm
  * 
 
- * Version: 0.1.0 - 2014-04-23
+ * Version: 0.1.0 - 2014-05-14
  * License: MIT
  */
 angular.module('cgForm', [
@@ -167,6 +167,7 @@ angular.module('cgForm.formConfig', []).factory('FormConfig', [
                     throw new Error('serviceBaseUrl  not found in $rootScope');
                 }
                 var context = $rootScope.serviceBaseUrl;
+                //Update Date Prototypes to have today and timeNow
                 return {
                     submitUrl: context + 'api/data/dataStoreService/',
                     resourceBaseUrl: context + 'api/data/dataAccessService/',
@@ -273,6 +274,14 @@ angular.module('cgForm.ffqForm', [
                 replace: true,
                 scope: { options: ' = ' },
                 link: function postLink(scope, element) {
+                    Date.prototype.today = function () {
+                        return this.getFullYear() + '-' + (this.getMonth() + 1 < 10 ? '0' : '') + (this.getMonth() + 1) + '-' + (this.getDate() < 10 ? '0' : '') + this.getDate();
+                    };
+                    Date.prototype.timeNow = function () {
+                        return (this.getHours() < 10 ? '0' : '') + this.getHours() + ':' + (this.getMinutes() < 10 ? '0' : '') + this.getMinutes() + ':' + (this.getSeconds() < 10 ? '0' : '') + this.getSeconds();
+                    };
+                    var newDate = new Date();
+                    $rootScope.timestamp = newDate.today() + '' + newDate.timeNow();
                     /* Load Json Schema for current state if not supplied through attributes */
                     scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
                     /* Initialize form data */
@@ -365,9 +374,18 @@ angular.module('cgForm.standardForm', [
                 scope: {
                     options: '=',
                     randomtotal: '@',
-                    randomsize: '@'
+                    randomsize: '@',
+                    formData: '='
                 },
                 link: function postLink(scope, element, attrs) {
+                    Date.prototype.today = function () {
+                        return this.getFullYear() + '-' + (this.getMonth() + 1 < 10 ? '0' : '') + (this.getMonth() + 1) + '-' + (this.getDate() < 10 ? '0' : '') + this.getDate();
+                    };
+                    Date.prototype.timeNow = function () {
+                        return (this.getHours() < 10 ? '0' : '') + this.getHours() + ':' + (this.getMinutes() < 10 ? '0' : '') + this.getMinutes() + ':' + (this.getSeconds() < 10 ? '0' : '') + this.getSeconds();
+                    };
+                    var newDate = new Date();
+                    $rootScope.timestamp = newDate.today() + '' + newDate.timeNow();
                     /* Load Json Schema for current state if not supplied through attributes */
                     scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
                     /* Generates a random form */
@@ -393,6 +411,7 @@ angular.module('cgForm.standardForm', [
                     function mathRandom() {
                         return Math.floor(Math.random() * scope.randomtotal + 1);
                     }
+
                     function getRandomNumber() {
                         var randomNumber;
                         while (1) {
@@ -403,8 +422,11 @@ angular.module('cgForm.standardForm', [
                         }
                         return randomNumber;
                     }
+
+                    console.log('random properties');
+                    console.log(scope.schema.properties);
                     /* Initialize data in  scope to save all form data*/
-                    scope.data = {};
+                    scope.data = scope.formData || {};
                     /* Extend the current schema with default config */
                     scope.schema = _.extend(scope.schema, FormConfig.getConfig());
                     /* Load lookup data if any and add initFocus attr to every elem to disable initFocus attribute */
@@ -461,6 +483,7 @@ angular.module('cgForm.standardForm', [
                             };
                             FormService.postResource(data).then(done, fail);
                         }
+
                         /* Get GPS */
                         $scope.getGps = function () {
                             $scope.data.gps_latitude = '12.7435';
@@ -499,10 +522,12 @@ angular.module('cgForm.surveyForm', [
                 };
                 FormService.postResource($scope.data).then(done, fail);
             }
+
             /* Validate form before submit */
             function isValidForm() {
                 return $element.data('bValidator').validate();
             }
+
             /* Handles enter Event on Form to render next Question */
             $scope.showNext = function () {
                 if (!isValidForm()) {
@@ -535,6 +560,7 @@ angular.module('cgForm.surveyForm', [
                     handleFlow();
                 }
             }
+
             /* Handles focus event on control group and modifies flow accordingly */
             $scope.jumpFlow = function (itemName) {
                 var flowIndex = _.findIndex($scope.flow.properties, { name: itemName });
@@ -576,6 +602,14 @@ angular.module('cgForm.surveyForm', [
                     fnct: '&onSave'
                 },
                 link: function postLink(scope, element) {
+                    Date.prototype.today = function () {
+                        return this.getFullYear() + '-' + (this.getMonth() + 1 < 10 ? '0' : '') + (this.getMonth() + 1) + '-' + (this.getDate() < 10 ? '0' : '') + this.getDate();
+                    };
+                    Date.prototype.timeNow = function () {
+                        return (this.getHours() < 10 ? '0' : '') + this.getHours() + ':' + (this.getMinutes() < 10 ? '0' : '') + this.getMinutes() + ':' + (this.getSeconds() < 10 ? '0' : '') + this.getSeconds();
+                    };
+                    var newDate = new Date();
+                    $rootScope.timestamp = newDate.today() + '' + newDate.timeNow();
                     /* Load Json Schema for current state if not supplied through attributes */
                     scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
                     /* Initialize form data */
@@ -585,6 +619,7 @@ angular.module('cgForm.surveyForm', [
                     /* Load lookup data and Cross Flow dynamic validation */
                     angular.forEach(scope.schema.properties, function (elem) {
                         if (elem.type === 'lookup') {
+                            console.log('lookup ');
                             FormService.getLookupData(elem.lookup).then(function (resp) {
                                 elem.type = 'radio';
                                 elem.items = resp.data;
@@ -632,6 +667,8 @@ angular.module('cgForm.surveyForm', [
                     angular.forEach(scope.schema.properties, function (elem) {
                         if (elem.name !== 'datastore' && elem.type === 'hidden') {
                             elem.value = $rootScope.$eval(elem.value);
+                            console.log(elem);
+                            console.log(elem.value);
                         }
                         if (elem.type === 'hidden') {
                             scope.data[elem.name] = elem.value;
