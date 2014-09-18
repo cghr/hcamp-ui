@@ -1,7 +1,7 @@
 describe('security section', function () {
-    beforeEach(module('myApp.security'));
+    beforeEach(module('security'));
 
-    it('should have a dummy test', inject(function() {
+    it('should have a dummy test', inject(function () {
         expect(true).toBeTruthy();
     }));
 });

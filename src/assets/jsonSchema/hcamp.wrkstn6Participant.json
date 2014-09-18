@@ -1,6 +1,6 @@
 {
-"schemaName":"hcamp.wrkstn3Participant",
-"onSave":"hcamp.wrkstn3",
+"schemaName":"hcamp.wrkstn6Participant",
+"onSave":"hcamp.wrkstn6",
 "properties":[
 
 
@@ -10,7 +10,7 @@
         "valdn":"",
         "label":"",
         "flow":"",
-        "value":"wrkstn3",
+        "value":"wrkstn6",
         "items":[
         
         ],
@@ -89,10 +89,10 @@
 
 
         {
-        "name":"sittingHeight",
-        "type":"text",
-        "valdn":"required",
-        "label":"Sitting height (cm)",
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Blood Sample Collection",
         "flow":"",
         "value":"",
         "items":[
@@ -117,33 +117,219 @@
 
 
         {
-        "name":"skipSittingHeight",
-        "type":"dropdown",
+        "name":"bloodSampleAttempt",
+        "type":"radio",
         "valdn":"required",
-        "label":"Why Sitting height not measured",
-        "flow":"data.sittingHeight=='0'",
+        "label":"Was blood sampling attempted?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"reasonNobld",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Reason blood sampling not attempted",
+        "flow":"data.bloodSampleAttempt=='No'",
+        "value":"",
+        "items":[
+        
+            {"text":"Poor venous access/flow","value":"Poor venous access/flow","valdn":""},
+        
+            {"text":"Moved arm","value":"Moved arm","valdn":""},
+        
+            {"text":"Abandoned","value":"Abandoned","valdn":""},
+        
+            {"text":"Feeling unwell/pain","value":"Feeling unwell/pain","valdn":""},
+        
+            {"text":"Malfunction","value":"Malfunction","valdn":""},
+        
+            {"text":"Recently donated blood","value":"Recently donated blood","valdn":""},
+        
+            {"text":"Against participant wishes","value":"Against participant wishes","valdn":""},
+        
+            {"text":"Equipment failure","value":"Equipment failure","valdn":""},
+        
+            {"text":"Other health reason","value":"Other health reason","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"fastTime",
+        "type":"text",
+        "valdn":"between[0:20],required",
+        "label":"Time since last meal or drink (except plain water) (hours)",
+        "flow":"data.bloodSampleAttempt=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"barcodeBloodTube",
+        "type":"text",
+        "valdn":"number,rangelength[11:11],required",
+        "label":"Scan barcode on collected blood sample tube",
+        "flow":"data.bloodSampleAttempt=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Nail Sample Collection",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"nailSampleAttempt",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Was nail sampling attempted?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"reasonNoNail",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Reason nail sampling not attempted",
+        "flow":"data.nailSampleAttempt=='No'",
         "value":"",
         "items":[
         
             {"text":"Amputee","value":"Amputee","valdn":""},
         
+            {"text":"Malfunction","value":"Malfunction","valdn":""},
+        
             {"text":"Recent surgery","value":"Recent surgery","valdn":""},
+        
+            {"text":"Equipment failure","value":"Equipment failure","valdn":""},
         
             {"text":"Unable to remove shoes/socks","value":"Unable to remove shoes/socks","valdn":""},
         
-            {"text":"Wheelchair user/unable to stand","value":"Wheelchair user/unable to stand","valdn":""},
-        
-            {"text":"Below minimum height scale","value":"Below minimum height scale","valdn":""},
-        
-            {"text":"Unable to sit or stand","value":"Unable to sit or stand","valdn":""},
-        
-            {"text":"Malfunction","value":"Malfunction","valdn":""},
-        
             {"text":"Other health reason","value":"Other health reason","valdn":""},
-        
-            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis","valdn":""},
-        
-            {"text":"Equipment failure","value":"Equipment failure","valdn":""},
         
             {"text":"Against participant wishes","value":"Against participant wishes","valdn":""}
         
@@ -167,187 +353,13 @@
 
 
         {
-        "name":"standingHeight",
+        "name":"barcodeNailSample",
         "type":"text",
-        "valdn":"required",
-        "label":"Standing height (cm)",
-        "flow":"",
+        "valdn":"number,rangelength[11:11],required",
+        "label":"Scan barcode on collected nail sample cyrovial",
+        "flow":"data.nailSampleAttempt=='Yes'",
         "value":"",
         "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"skipStandingHeight",
-        "type":"dropdown",
-        "valdn":"required",
-        "label":"Why Standing height not measured",
-        "flow":"data.standingHeight=='0'",
-        "value":"",
-        "items":[
-        
-            {"text":"Amputee","value":"Amputee","valdn":""},
-        
-            {"text":"Recent surgery","value":"Recent surgery","valdn":""},
-        
-            {"text":"Unable to remove shoes/socks","value":"Unable to remove shoes/socks","valdn":""},
-        
-            {"text":"Wheelchair user/unable to stand","value":"Wheelchair user/unable to stand","valdn":""},
-        
-            {"text":"Below minimum height scale","value":"Below minimum height scale","valdn":""},
-        
-            {"text":"Unable to sit or stand","value":"Unable to sit or stand","valdn":""},
-        
-            {"text":"Malfunction","value":"Malfunction","valdn":""},
-        
-            {"text":"Other health reason","value":"Other health reason","valdn":""},
-        
-            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis","valdn":""},
-        
-            {"text":"Equipment failure","value":"Equipment failure","valdn":""},
-        
-            {"text":"Against participant wishes","value":"Against participant wishes","valdn":""}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"waistCircumference",
-        "type":"text",
-        "valdn":"required",
-        "label":"Waist circumference (cm)",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"skipWaistCircumference",
-        "type":"dropdown",
-        "valdn":"required",
-        "label":"Why Waist circumference not measured ",
-        "flow":"data.waistCircumference=='0'",
-        "value":"",
-        "items":[
-        
-            {"text":"Against participant wishes","value":"Against participant wishes","valdn":""},
-        
-            {"text":"Other health reason","value":"Other health reason","valdn":""},
-        
-            {"text":"Equipment failure","value":"Equipment failure","valdn":""}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"hipCircumference",
-        "type":"text",
-        "valdn":"required",
-        "label":"Hip circumference (cm)",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"skipHipCircumference",
-        "type":"dropdown",
-        "valdn":"required",
-        "label":"Why Hip circumference not measured ",
-        "flow":"data.hipCircumference=='0'",
-        "value":"",
-        "items":[
-        
-            {"text":"Against participant wishes","value":"Against participant wishes","valdn":""},
-        
-            {"text":"Other health reason","value":"Other health reason","valdn":""},
-        
-            {"text":"Equipment failure","value":"Equipment failure","valdn":""}
         
         ],
         "image":"",

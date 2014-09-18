@@ -1,0 +1,12 @@
+<div class='sidebar'>
+    <ul>
+        <li ng-repeat='menu in menuOptions'>
+            <span class='heading'>{{menu.label}}</span>
+            <ul>
+                <li ng-repeat='menuItem in menu.items'>
+                    <a ng-href='#/report/{{menuItem.id}}'>{{menuItem.label}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

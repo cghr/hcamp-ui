@@ -43,7 +43,7 @@ angular.module('appRoutes', [])
             {
                 name: 'wrkstn3Participant',
                 url: '/wrkstn/3/participant/:memberId',
-                tpl: 'tpls/participantStandard.tpl.html',
+                tpl: 'tpls/participantSurvey.tpl.html',
                 title: 'WorkStation3'
 
             },
@@ -85,8 +85,22 @@ angular.module('appRoutes', [])
             {
                 name: 'wrkstn6Participant',
                 url: '/wrkstn/6/participant/:memberId',
+                tpl: 'tpls/participantSurvey.tpl.html',
+                title: 'WorkStation6'
+
+            },
+            {
+                name: 'wrkstn7',
+                url: '/wrkstn/7',
+                tpl: 'tpls/dataGrid.tpl.html',
+                title: 'WorkStation7'
+
+            },
+            {
+                name: 'wrkstn7Participant',
+                url: '/wrkstn/7/participant/:memberId',
                 tpl: 'tpls/reportCard.tpl.html',
-                title: 'WorkStation6',
+                title: 'WorkStation7',
                 ctrl: 'reportCardCtrl'
 
             }

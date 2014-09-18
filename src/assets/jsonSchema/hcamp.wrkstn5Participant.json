@@ -18,12 +18,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -42,12 +46,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -66,12 +74,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -80,7 +92,7 @@
         "name":"",
         "type":"heading",
         "valdn":"",
-        "label":"Blood Sample Collection",
+        "label":"Spirometry",
         "flow":"",
         "value":"",
         "items":[
@@ -90,164 +102,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"bloodSampleAttempt",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Was blood sampling attempted?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"reasonNobld",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Reason blood sampling not attempted",
-        "flow":"data.bloodSampleAttempt=='No'",
-        "value":"",
-        "items":[
-        
-            {"text":"Declined","value":"Declined"},
-        
-            {"text":"Against participant wishes","value":"Against participant wishes"},
-        
-            {"text":"Lack of time","value":"Lack of time"},
-        
-            {"text":"Equipment failure","value":"Equipment failure"},
-        
-            {"text":"Malfunction","value":"Malfunction"},
-        
-            {"text":"Not available","value":"Not available"},
-        
-            {"text":"Unable","value":"Unable"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Reason not stated","value":"Reason not stated"},
-        
-            {"text":"Moved arm","value":"Moved arm"},
-        
-            {"text":"Poor venous access/flow","value":"Poor venous access/flow"},
-        
-            {"text":"Recently donated blood","value":"Recently donated blood"},
-        
-            {"text":"Abandoned","value":"Abandoned"},
-        
-            {"text":"Feeling unwell/pain","value":"Feeling unwell/pain"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"fastTime",
-        "type":"text",
-        "valdn":"between[1:20],required",
-        "label":"Time since last meal or drink (except plain water) (hours)",
-        "flow":"data.bloodSampleAttempt=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"barcodeBloodTube",
-        "type":"text",
-        "valdn":"number,rangelength[11:11],required",
-        "label":"Scan barcode on collected blood sample tube",
-        "flow":"data.bloodSampleAttempt=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"volumeBlood",
-        "type":"text",
-        "valdn":"between[1:10],required",
-        "label":"Volume of blood",
-        "flow":"data.bloodSampleAttempt=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -255,8 +119,8 @@
         {
         "name":"",
         "type":"heading",
-        "valdn":"",
-        "label":"Nail Sample Collection",
+        "valdn":"required",
+        "label":"Contra-Indications for Spirometry are 1.Pregnancy (If female) 2.Active Tubeculosis 3.Any lung problems",
         "flow":"",
         "value":"",
         "items":[
@@ -266,84 +130,130 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"nailSampleAttempt",
+        "name":"contraIndicationStatus",
         "type":"radio",
         "valdn":"required",
-        "label":"Was nail sampling attempted?",
+        "label":"Any of contra-indications reported?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"}
+            {"text":"Unsure","value":"Unsure","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"reasonNoNail",
+        "name":"spContraind",
         "type":"radio",
         "valdn":"required",
-        "label":"Reason nail sampling not attempted",
-        "flow":"data.nailSampleAttempt=='No'",
+        "label":"Contra-Indication reported (select one)",
+        "flow":"data.contraIndicationStatus!='No'",
         "value":"",
         "items":[
         
-            {"text":"Declined","value":"Declined"},
+            {"text":"1.Pregnancy (If female) ","value":"1.Pregnancy (If female) ","valdn":""},
         
-            {"text":"Against participant wishes","value":"Against participant wishes"},
+            {"text":"2.Active Tubeculosis ","value":"2.Active Tubeculosis ","valdn":""},
         
-            {"text":"Lack of time","value":"Lack of time"},
-        
-            {"text":"Feeling unwell","value":"Feeling unwell"},
-        
-            {"text":"Other health reason","value":"Other health reason"}
+            {"text":"3.Any lung problems","value":"3.Any lung problems","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"barcodeCryovial",
+        "name":"spMethod",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Spirometry method",
+        "flow":"data.contraIndicationStatus=='No'",
+        "value":"",
+        "items":[
+        
+            {"text":"Direct entry","value":"Direct entry","valdn":""},
+        
+            {"text":"Manual","value":"Manual","valdn":""},
+        
+            {"text":"Not performed - equipment failure","value":"Not performed - equipment failure","valdn":""},
+        
+            {"text":"Not performed - other reason","value":"Not performed - other reason","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"fvc",
         "type":"text",
-        "valdn":"number,rangelength[11:11],required",
-        "label":"Scan barcode on collected nail sample cyrovial",
-        "flow":"",
+        "valdn":"required",
+        "label":"FVC",
+        "flow":"data.spMethod=='Direct entry' || data.spMethod=='Manual'",
         "value":"",
         "items":[
         
@@ -352,12 +262,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

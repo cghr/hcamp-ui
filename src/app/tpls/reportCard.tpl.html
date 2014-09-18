@@ -48,7 +48,7 @@
                     </tr>
                     <tr>
                         <td>BMI</td>
-                        <td>{{data.bmi}}</td>
+                        <td>{{data.BMI}}</td>
                     </tr>
                     <tr>
                         <td>Waist Cirumference</td>
@@ -56,14 +56,22 @@
                     </tr>
                     <tr>
                         <td>Weight</td>
-                        <td>{{data.weight}}</td>
+                        <td>{{data.WEIGHT}}</td>
+                    </tr>
+                    <tr>
+                        <td>Body Fat %</td>
+                        <td>{{data.FATP}}</td>
+                    </tr>
+                    <tr>
+                        <td>Body Water %</td>
+                        <td>{{data.TBW}}</td>
                     </tr>
                 </table>
                 <a href=""  ng-click="reportCardUpdate()" class="btn btn-primary">Done</a>
             </div>
 
         </div>
-        <div class='span4'><img width="200" height="100" src="assets/photos/{{$stateParams.memberId}}.jpg"/></div>
+        <div class='span4'><img width="200" height="100" src="assets/photos/{{$stateParams.memberId}}_photo"/></div>
     </div>
 
 </div>

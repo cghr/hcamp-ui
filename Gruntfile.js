@@ -40,8 +40,8 @@ module.exports = function(grunt) {
             coffee: [ 'src/**/*.coffee', '!src/**/*.spec.coffee' ],
             coffeeunit: [ 'src/**/*.spec.coffee' ],
 
-            appTemplates: [ 'src/app/**/*.tpl.html' ],
-            commonTemplates: [ 'src/common/**/*.tpl.html' ],
+            appTemplates: [ 'src/app/**/*.html' ],
+            commonTemplates: [ 'src/common/**/*.html' ],
 
             html: [ 'src/index.html' ],
             less: 'src/less/main.less'
@@ -92,8 +92,8 @@ module.exports = function(grunt) {
                 'vendor/lib-plusAsTab/release/scripts/emulatetab.joelpurra.js',
                 'vendor/lib-plusAsTab/release/scripts/plusastab.joelpurra.js',
                 'vendor/gridLib/release/scripts/dhtmlx.js',
-                'vendor/cgGrid/dist/cgGrid.js',
-                'vendor/cgForm/dist/cgForm-tpls.js',
+                'vendor/cgGrid/dist/cgGrid-tpls-0.1.0.js',
+                'vendor/cgForm/dist/cgForm-tpls-0.1.0.js',
                 'vendor/angularjs-media/angularjs.media.directives.annotate.js',
                 'vendor/angularjs.media.directive.js'
             ],
@@ -319,13 +319,7 @@ module.exports = function(grunt) {
                 'Gruntfile.js'
             ],
             options: {
-                curly: true,
-                immed: true,
-                newcap: true,
-                noarg: true,
-                sub: true,
-                boss: true,
-                eqnull: true
+                jshintrc: '.jshintrc'
             },
             globals: {}
         },

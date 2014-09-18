@@ -1,8 +1,17 @@
 <div class="span6">
+    <div><button class="btn btn-primary" ng-click="getData()">Get Data</button></div>
     <standard-form></standard-form>
 </div>
 <div class="span6">
-    <div><img width="200" height="400" src="assets/photos/{{$stateParams.memberId}}.jpg" /></div>
+
+    <div><img width="200" height="400" src="assets/photos/{{$stateParams.memberId}}_photo" /></div>
+    <div>
+        NAME:<b>{{person.name}}</b><br>
+        AGE:<b>{{person.age}}</b><br>
+        Date Of Birth:<b>01/01/{{2014-person.age}}</b><br>
+        GENDER:<b>{{person.gender}}</b><br>
+        HEIGHT:<b>{{person.height}}</b><br>
+    </div>
     <div ng-show="$state.includes('wrkstn2Participant')">
 
         <h4>Peak Flow Demonstration</h4>

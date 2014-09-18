@@ -1,0 +1,1 @@
+angular.module('jQuery', []).constant('jQuery', window.$)

@@ -4,7 +4,6 @@ angular.module("myApp", [
         'ui.bootstrap',
         'cgForm',
         'cgGrid',
-        'appDefaultConfig',
         'appRoutes',
         'idService',
         'appService',
@@ -13,17 +12,29 @@ angular.module("myApp", [
         'templates-common',
         'ui.router.state',
         'ui.router',
-        'myApp.security',
-        'myApp.report',
+        'security',
+        'report',
         'toaster',
         'sync',
         'angularjs.media.directives',
         'myApp.trackParticipant',
-        'phnInvitation'
+        'phnInvitation',
+        'schemaLoader'
     ])
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($urlRouterProvider, $httpProvider) {
 
-        //Todo add default landing page
-        $urlRouterProvider.otherwise('/hcamp/wrkstn/1');
+        var reqInterceptor = function () {
+            return {
+                'request': function (config) {
+                    var url = config.url
+                    if (url.indexOf("api/") !== -1)
+                        config.url = 'http://localhost:8080/' + url
+                    return config;
+                }
+            };
 
-    });
+        }
+        //$httpProvider.interceptors.push(reqInterceptor);
+
+        $urlRouterProvider.otherwise('/hcamp/wrkstn/1')
+    })

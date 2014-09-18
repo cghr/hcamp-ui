@@ -2,8 +2,14 @@
     <survey-form></survey-form>
 </div>
 <div class="span6">
-    <div><img width="200" height="400" src="assets/photos/{{$stateParams.memberId}}.jpg" /></div>
-    <div ng-show="$state.includes('hcamp.wrkstn4Participant')">
+    <div><img width="200" height="400" src="assets/photos/{{$stateParams.memberId}}_photo" /></div>
+    <div>
+        NAME:<b>{{person.name}}</b><br>
+        AGE:<b>{{person.age}}</b><br>
+        Date Of Birth:<b>01/01/{{2014-person.age_value}}</b><br>
+        GENDER:<b>{{person.gender}}</b><br>
+        HEIGHT:<b>{{person.height}}</b><br>   </div>
+    <div ng-show="$state.includes('hcamp.wrkstn5Participant')">
 
         <h4>Peak Flow Demonstration</h4>
         <div><flash width="500" height="400" src="assets/videos/PeakFlow.swf"></flash></div>

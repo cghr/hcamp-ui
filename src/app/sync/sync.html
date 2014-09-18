@@ -1,0 +1,22 @@
+<div ng-controller="syncCtrl">
+
+    <div class="container">
+
+        <p>Download</p>
+        <progressbar class="progress-striped active" value="pendingDownloads" max="totalDownloads"
+                     type="info">
+            <i>{{downloadProgress}} %</i>
+        </progressbar>
+
+        <p>Upload</p>
+        <progressbar class="progress-striped active" value="pendingUploads" max="totalUploads"
+                     type="info"><i>{{uploadProgress}} %</i>
+        </progressbar>
+
+        <p>Images Upload</p>
+        <progressbar class="progress-striped active" value="pendingFileUploads" max="totalFileUploads"
+                     type="info"><i>{{fileUploadProgress}} %</i>
+        </progressbar>
+
+    </div>
+</div>

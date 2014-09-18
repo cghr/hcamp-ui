@@ -7,19 +7,25 @@
             <label><input type="radio" ng-model="verification.mother" name="mother" value="no">No</label>
 
             <b> 2.What's your spouse's name ?</b>
-            Ans.<span style="color:red">{{verificationData.spouseName}}</span>
+            Ans.<span style="color:red">{{verificationData.nameSpouse}}</span>
             <label><input type="radio" ng-model="verification.spouse" name="spouse" value="yes">Yes</label>
             <label><input type="radio" ng-model="verification.spouse" name="spouse" value="no">No</label>
 
 
         </div>
-        <div ng-show="verification.spouse=='yes' && verification.mother=='yes'">
+        <div ng-show="verification.spouse=='yes' || verification.mother=='yes'">
             <survey-form></survey-form>
         </div>
 
     </div>
     <div class="span6">
-        <div><img width="200" height="400" src="assets/photos/{{$stateParams.memberId}}.jpg"/></div>
+        <div><img width="200" height="400" src="assets/photos/{{$stateParams.memberId}}_photo"/></div>
+        <div>
+            <strong>Name</strong>:{{person.name}}<br>
+            <strong>Age</strong>:{{person.age_value}}<br>
+            <strong>Gender</strong>:{{person.gender}}<br>
+            <strong>Height</strong>:{{person.standingHeight}}<br>
+        </div>
         <div ng-show="$state.includes('hcamp.wrkstn2Participant')">
 
             <h4>Peak Flow Demonstration</h4>

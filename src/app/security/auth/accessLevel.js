@@ -1,40 +1,39 @@
 angular.module('accessLevel', ['authService'])
     .directive('accessLevel', function (Auth) {
-        return {
-            restrict: 'A',
-            link: function ($scope, element, attrs) {
-                var prevDisp = element.css('display'),
-                    userRole, accessLevel;
 
-                $scope.user = Auth.user;
-                $scope.$watch('user', function (user) {
-                    if (user.role) {
-                        userRole = user.role;
-                    }
+        function postLink($scope, element, attrs) {
 
-                    updateCSS();
-                }, true);
+            var prevDisp = element.css('display'),
+                userRole, accessLevel
 
-                attrs.$observe('accessLevel', function (al) {
-                    if (al) {
-                        accessLevel = $scope.$eval(al);
-                    }
+            $scope.user = Auth.user
+            $scope.$watch('user', function (user) {
 
+                if (user.role)
+                    userRole = user.role
 
-                    updateCSS();
-                });
+                updateCSS()
+            }, true)
 
-                function updateCSS() {
-                    if (userRole && accessLevel) {
-                        if (!Auth.authorize(accessLevel, userRole)) {
-                            element.css('display', 'none');
-                        } else {
-                            element.css('display', prevDisp);
-                        }
+            attrs.$observe('accessLevel', function (al) {
+                if (al)
+                    accessLevel = $scope.$eval(al)
 
-                    }
+                updateCSS()
+            })
+
+            function updateCSS() {
+
+                if (userRole && accessLevel) {
+                    var elmDisplay = !Auth.authorize(accessLevel, userRole) ? "none" : prevDisp
+                    element.css('display', elmDisplay)
                 }
             }
-        };
+        }
+
+        return {
+            restrict: 'A',
+            link: postLink
+        }
     }
-);
+)

@@ -18,12 +18,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -42,12 +46,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -66,84 +74,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"bpSystolic",
-        "type":"text",
-        "valdn":"between[30:250],required",
-        "label":"Systolic Blood pressure (left arm – sitting) of the respondent (mm/hg)",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"bpDiastolic",
-        "type":"text",
-        "valdn":"between[30:{data.bpSystolic}],required",
-        "label":"Diastolic Blood pressure (left arm – sitting) of the respondent (mm/hg)",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"heartrate",
-        "type":"text",
-        "valdn":"between[30:150],required",
-        "label":"Heart rate / min measure of the respondent (Per Minute)",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -162,12 +102,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -186,12 +130,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -201,89 +149,37 @@
         "type":"dropdown",
         "valdn":"required",
         "label":"Why Index finger not measured ",
-        "flow":"data.indexFingerLength=='#'",
+        "flow":"data.indexFingerLength=='0'",
         "value":"",
         "items":[
         
-            {"text":"Declined","value":"Declined"},
+            {"text":"Amputee","value":"Amputee","valdn":""},
         
-            {"text":"Against participant wishes","value":"Against participant wishes"},
+            {"text":"Malfunction","value":"Malfunction","valdn":""},
         
-            {"text":"Lack of time","value":"Lack of time"},
+            {"text":"Recent surgery","value":"Recent surgery","valdn":""},
         
-            {"text":"Feeling unwell","value":"Feeling unwell"},
+            {"text":"Equipment failure","value":"Equipment failure","valdn":""},
         
-            {"text":"Other health reason","value":"Other health reason"},
+            {"text":"Other health reason","value":"Other health reason","valdn":""},
         
-            {"text":"Equipment failure","value":"Equipment failure"},
-        
-            {"text":"Malfunction","value":"Malfunction"},
-        
-            {"text":"Not available","value":"Not available"},
-        
-            {"text":"Unable","value":"Unable"},
-        
-            {"text":"Above max weight","value":"Above max weight"},
-        
-            {"text":"Amputee","value":"Amputee"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Pregnant","value":"Pregnant"},
-        
-            {"text":"Unable to grip","value":"Unable to grip"},
-        
-            {"text":"Unable to remove shoes/socks","value":"Unable to remove shoes/socks"},
-        
-            {"text":"Wheelchair user/unable to stand","value":"Wheelchair user/unable to stand"},
-        
-            {"text":"Asthma/lung disease","value":"Asthma/lung disease"},
-        
-            {"text":"Unable to understand instructions","value":"Unable to understand instructions"},
-        
-            {"text":"Physically unable","value":"Physically unable"},
-        
-            {"text":"Previous measures unavailable","value":"Previous measures unavailable"},
-        
-            {"text":"Arthritis","value":"Arthritis"},
-        
-            {"text":"Recent surgery","value":"Recent surgery"},
-        
-            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis"},
-        
-            {"text":"Above max measurement","value":"Above max measurement"},
-        
-            {"text":"Colostomy bag","value":"Colostomy bag"},
-        
-            {"text":"Below minimum height scale","value":"Below minimum height scale"},
-        
-            {"text":"Unable to sit","value":"Unable to sit"},
-        
-            {"text":"Nurse Advised not to perform","value":"Nurse Advised not to perform"},
-        
-            {"text":"Chest infection","value":"Chest infection"},
-        
-            {"text":"Collapsed lung","value":"Collapsed lung"},
-        
-            {"text":"Heart problems","value":"Heart problems"},
-        
-            {"text":"High BP","value":"High BP"},
-        
-            {"text":"Retinal detachment/eye problems","value":"Retinal detachment/eye problems"},
-        
-            {"text":"Tuberculosis","value":"Tuberculosis"}
+            {"text":"Against participant wishes","value":"Against participant wishes","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -302,12 +198,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -317,98 +217,46 @@
         "type":"dropdown",
         "valdn":"required",
         "label":"Why Ring finger not measured ",
-        "flow":"data.ringFingerLength=='#'",
+        "flow":"data.ringFingerLength=='0'",
         "value":"",
         "items":[
         
-            {"text":"Declined","value":"Declined"},
+            {"text":"Amputee","value":"Amputee","valdn":""},
         
-            {"text":"Against participant wishes","value":"Against participant wishes"},
+            {"text":"Malfunction","value":"Malfunction","valdn":""},
         
-            {"text":"Lack of time","value":"Lack of time"},
+            {"text":"Recent surgery","value":"Recent surgery","valdn":""},
         
-            {"text":"Feeling unwell","value":"Feeling unwell"},
+            {"text":"Equipment failure","value":"Equipment failure","valdn":""},
         
-            {"text":"Other health reason","value":"Other health reason"},
+            {"text":"Other health reason","value":"Other health reason","valdn":""},
         
-            {"text":"Equipment failure","value":"Equipment failure"},
-        
-            {"text":"Malfunction","value":"Malfunction"},
-        
-            {"text":"Not available","value":"Not available"},
-        
-            {"text":"Unable","value":"Unable"},
-        
-            {"text":"Above max weight","value":"Above max weight"},
-        
-            {"text":"Amputee","value":"Amputee"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Pregnant","value":"Pregnant"},
-        
-            {"text":"Unable to grip","value":"Unable to grip"},
-        
-            {"text":"Unable to remove shoes/socks","value":"Unable to remove shoes/socks"},
-        
-            {"text":"Wheelchair user/unable to stand","value":"Wheelchair user/unable to stand"},
-        
-            {"text":"Asthma/lung disease","value":"Asthma/lung disease"},
-        
-            {"text":"Unable to understand instructions","value":"Unable to understand instructions"},
-        
-            {"text":"Physically unable","value":"Physically unable"},
-        
-            {"text":"Previous measures unavailable","value":"Previous measures unavailable"},
-        
-            {"text":"Arthritis","value":"Arthritis"},
-        
-            {"text":"Recent surgery","value":"Recent surgery"},
-        
-            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis"},
-        
-            {"text":"Above max measurement","value":"Above max measurement"},
-        
-            {"text":"Colostomy bag","value":"Colostomy bag"},
-        
-            {"text":"Below minimum height scale","value":"Below minimum height scale"},
-        
-            {"text":"Unable to sit","value":"Unable to sit"},
-        
-            {"text":"Nurse Advised not to perform","value":"Nurse Advised not to perform"},
-        
-            {"text":"Chest infection","value":"Chest infection"},
-        
-            {"text":"Collapsed lung","value":"Collapsed lung"},
-        
-            {"text":"Heart problems","value":"Heart problems"},
-        
-            {"text":"High BP","value":"High BP"},
-        
-            {"text":"Retinal detachment/eye problems","value":"Retinal detachment/eye problems"},
-        
-            {"text":"Tuberculosis","value":"Tuberculosis"}
+            {"text":"Against participant wishes","value":"Against participant wishes","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"sittingHeight",
+        "name":"bpSystolic",
         "type":"text",
-        "valdn":"required",
-        "label":"Sitting height (cm)",
+        "valdn":"between[60:250],required",
+        "label":"Systolic Blood pressure (left arm – sitting) of the respondent (mm/hg)",
         "flow":"",
         "value":"",
         "items":[
@@ -418,113 +266,25 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"skipSittingHeight",
-        "type":"dropdown",
-        "valdn":"required",
-        "label":"Why Sitting height not measured",
-        "flow":"data.sittingHeight=='#'",
-        "value":"",
-        "items":[
-        
-            {"text":"Declined","value":"Declined"},
-        
-            {"text":"Against participant wishes","value":"Against participant wishes"},
-        
-            {"text":"Lack of time","value":"Lack of time"},
-        
-            {"text":"Feeling unwell","value":"Feeling unwell"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Equipment failure","value":"Equipment failure"},
-        
-            {"text":"Malfunction","value":"Malfunction"},
-        
-            {"text":"Not available","value":"Not available"},
-        
-            {"text":"Unable","value":"Unable"},
-        
-            {"text":"Above max weight","value":"Above max weight"},
-        
-            {"text":"Amputee","value":"Amputee"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Pregnant","value":"Pregnant"},
-        
-            {"text":"Unable to grip","value":"Unable to grip"},
-        
-            {"text":"Unable to remove shoes/socks","value":"Unable to remove shoes/socks"},
-        
-            {"text":"Wheelchair user/unable to stand","value":"Wheelchair user/unable to stand"},
-        
-            {"text":"Asthma/lung disease","value":"Asthma/lung disease"},
-        
-            {"text":"Unable to understand instructions","value":"Unable to understand instructions"},
-        
-            {"text":"Physically unable","value":"Physically unable"},
-        
-            {"text":"Previous measures unavailable","value":"Previous measures unavailable"},
-        
-            {"text":"Arthritis","value":"Arthritis"},
-        
-            {"text":"Recent surgery","value":"Recent surgery"},
-        
-            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis"},
-        
-            {"text":"Above max measurement","value":"Above max measurement"},
-        
-            {"text":"Colostomy bag","value":"Colostomy bag"},
-        
-            {"text":"Below minimum height scale","value":"Below minimum height scale"},
-        
-            {"text":"Unable to sit","value":"Unable to sit"},
-        
-            {"text":"Nurse Advised not to perform","value":"Nurse Advised not to perform"},
-        
-            {"text":"Chest infection","value":"Chest infection"},
-        
-            {"text":"Collapsed lung","value":"Collapsed lung"},
-        
-            {"text":"Heart problems","value":"Heart problems"},
-        
-            {"text":"High BP","value":"High BP"},
-        
-            {"text":"Retinal detachment/eye problems","value":"Retinal detachment/eye problems"},
-        
-            {"text":"Tuberculosis","value":"Tuberculosis"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"standingHeight",
+        "name":"bpDiastolic",
         "type":"text",
-        "valdn":"required",
-        "label":"Standing height (cm)",
+        "valdn":"between[40:200],required",
+        "label":"Diastolic Blood pressure (left arm – sitting) of the respondent (mm/hg)",
         "flow":"",
         "value":"",
         "items":[
@@ -534,113 +294,25 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
 
         {
-        "name":"skipStandingHeight",
-        "type":"dropdown",
-        "valdn":"required",
-        "label":"Why Standing height not measured",
-        "flow":"data.standingHeight=='#'",
-        "value":"",
-        "items":[
-        
-            {"text":"Declined","value":"Declined"},
-        
-            {"text":"Against participant wishes","value":"Against participant wishes"},
-        
-            {"text":"Lack of time","value":"Lack of time"},
-        
-            {"text":"Feeling unwell","value":"Feeling unwell"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Equipment failure","value":"Equipment failure"},
-        
-            {"text":"Malfunction","value":"Malfunction"},
-        
-            {"text":"Not available","value":"Not available"},
-        
-            {"text":"Unable","value":"Unable"},
-        
-            {"text":"Above max weight","value":"Above max weight"},
-        
-            {"text":"Amputee","value":"Amputee"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Pregnant","value":"Pregnant"},
-        
-            {"text":"Unable to grip","value":"Unable to grip"},
-        
-            {"text":"Unable to remove shoes/socks","value":"Unable to remove shoes/socks"},
-        
-            {"text":"Wheelchair user/unable to stand","value":"Wheelchair user/unable to stand"},
-        
-            {"text":"Asthma/lung disease","value":"Asthma/lung disease"},
-        
-            {"text":"Unable to understand instructions","value":"Unable to understand instructions"},
-        
-            {"text":"Physically unable","value":"Physically unable"},
-        
-            {"text":"Previous measures unavailable","value":"Previous measures unavailable"},
-        
-            {"text":"Arthritis","value":"Arthritis"},
-        
-            {"text":"Recent surgery","value":"Recent surgery"},
-        
-            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis"},
-        
-            {"text":"Above max measurement","value":"Above max measurement"},
-        
-            {"text":"Colostomy bag","value":"Colostomy bag"},
-        
-            {"text":"Below minimum height scale","value":"Below minimum height scale"},
-        
-            {"text":"Unable to sit","value":"Unable to sit"},
-        
-            {"text":"Nurse Advised not to perform","value":"Nurse Advised not to perform"},
-        
-            {"text":"Chest infection","value":"Chest infection"},
-        
-            {"text":"Collapsed lung","value":"Collapsed lung"},
-        
-            {"text":"Heart problems","value":"Heart problems"},
-        
-            {"text":"High BP","value":"High BP"},
-        
-            {"text":"Retinal detachment/eye problems","value":"Retinal detachment/eye problems"},
-        
-            {"text":"Tuberculosis","value":"Tuberculosis"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"waistCircumference",
+        "name":"heartrate",
         "type":"text",
-        "valdn":"required",
-        "label":"Waist circumference (cm)",
+        "valdn":"between[40:200],required",
+        "label":"Heart rate / min measure of the respondent (Per Minute)",
         "flow":"",
         "value":"",
         "items":[
@@ -650,220 +322,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
         },
-
-
-
-        {
-        "name":"skipWaistCircumference",
-        "type":"dropdown",
-        "valdn":"required",
-        "label":"Why Waist circumference not measured ",
-        "flow":"data.waistCircumference=='#'",
-        "value":"",
-        "items":[
-        
-            {"text":"Declined","value":"Declined"},
-        
-            {"text":"Against participant wishes","value":"Against participant wishes"},
-        
-            {"text":"Lack of time","value":"Lack of time"},
-        
-            {"text":"Feeling unwell","value":"Feeling unwell"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Equipment failure","value":"Equipment failure"},
-        
-            {"text":"Malfunction","value":"Malfunction"},
-        
-            {"text":"Not available","value":"Not available"},
-        
-            {"text":"Unable","value":"Unable"},
-        
-            {"text":"Above max weight","value":"Above max weight"},
-        
-            {"text":"Amputee","value":"Amputee"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Pregnant","value":"Pregnant"},
-        
-            {"text":"Unable to grip","value":"Unable to grip"},
-        
-            {"text":"Unable to remove shoes/socks","value":"Unable to remove shoes/socks"},
-        
-            {"text":"Wheelchair user/unable to stand","value":"Wheelchair user/unable to stand"},
-        
-            {"text":"Asthma/lung disease","value":"Asthma/lung disease"},
-        
-            {"text":"Unable to understand instructions","value":"Unable to understand instructions"},
-        
-            {"text":"Physically unable","value":"Physically unable"},
-        
-            {"text":"Previous measures unavailable","value":"Previous measures unavailable"},
-        
-            {"text":"Arthritis","value":"Arthritis"},
-        
-            {"text":"Recent surgery","value":"Recent surgery"},
-        
-            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis"},
-        
-            {"text":"Above max measurement","value":"Above max measurement"},
-        
-            {"text":"Colostomy bag","value":"Colostomy bag"},
-        
-            {"text":"Below minimum height scale","value":"Below minimum height scale"},
-        
-            {"text":"Unable to sit","value":"Unable to sit"},
-        
-            {"text":"Nurse Advised not to perform","value":"Nurse Advised not to perform"},
-        
-            {"text":"Chest infection","value":"Chest infection"},
-        
-            {"text":"Collapsed lung","value":"Collapsed lung"},
-        
-            {"text":"Heart problems","value":"Heart problems"},
-        
-            {"text":"High BP","value":"High BP"},
-        
-            {"text":"Retinal detachment/eye problems","value":"Retinal detachment/eye problems"},
-        
-            {"text":"Tuberculosis","value":"Tuberculosis"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"hipCircumference",
-        "type":"text",
-        "valdn":"required",
-        "label":"Hip circumference (cm)",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
-        },
-
-
-
-        {
-        "name":"skipHipCircumference",
-        "type":"dropdown",
-        "valdn":"required",
-        "label":"Why Hip circumference not measured ",
-        "flow":"data.hipCircumference=='#'",
-        "value":"",
-        "items":[
-        
-            {"text":"Declined","value":"Declined"},
-        
-            {"text":"Against participant wishes","value":"Against participant wishes"},
-        
-            {"text":"Lack of time","value":"Lack of time"},
-        
-            {"text":"Feeling unwell","value":"Feeling unwell"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Equipment failure","value":"Equipment failure"},
-        
-            {"text":"Malfunction","value":"Malfunction"},
-        
-            {"text":"Not available","value":"Not available"},
-        
-            {"text":"Unable","value":"Unable"},
-        
-            {"text":"Above max weight","value":"Above max weight"},
-        
-            {"text":"Amputee","value":"Amputee"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Pregnant","value":"Pregnant"},
-        
-            {"text":"Unable to grip","value":"Unable to grip"},
-        
-            {"text":"Unable to remove shoes/socks","value":"Unable to remove shoes/socks"},
-        
-            {"text":"Wheelchair user/unable to stand","value":"Wheelchair user/unable to stand"},
-        
-            {"text":"Asthma/lung disease","value":"Asthma/lung disease"},
-        
-            {"text":"Unable to understand instructions","value":"Unable to understand instructions"},
-        
-            {"text":"Physically unable","value":"Physically unable"},
-        
-            {"text":"Previous measures unavailable","value":"Previous measures unavailable"},
-        
-            {"text":"Arthritis","value":"Arthritis"},
-        
-            {"text":"Recent surgery","value":"Recent surgery"},
-        
-            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis"},
-        
-            {"text":"Above max measurement","value":"Above max measurement"},
-        
-            {"text":"Colostomy bag","value":"Colostomy bag"},
-        
-            {"text":"Below minimum height scale","value":"Below minimum height scale"},
-        
-            {"text":"Unable to sit","value":"Unable to sit"},
-        
-            {"text":"Nurse Advised not to perform","value":"Nurse Advised not to perform"},
-        
-            {"text":"Chest infection","value":"Chest infection"},
-        
-            {"text":"Collapsed lung","value":"Collapsed lung"},
-        
-            {"text":"Heart problems","value":"Heart problems"},
-        
-            {"text":"High BP","value":"High BP"},
-        
-            {"text":"Retinal detachment/eye problems","value":"Retinal detachment/eye problems"},
-        
-            {"text":"Tuberculosis","value":"Tuberculosis"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        }
+        "help":""
         },
 
 
@@ -882,12 +350,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -906,12 +378,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -921,89 +397,45 @@
         "type":"dropdown",
         "valdn":"required",
         "label":"Why Right Grip strength not measured ",
-        "flow":"data.rightGripStrength=='#'",
+        "flow":"data.rightGripStrength=='0'",
         "value":"",
         "items":[
         
-            {"text":"Declined","value":"Declined"},
+            {"text":"Amputee","value":"Amputee","valdn":""},
         
-            {"text":"Against participant wishes","value":"Against participant wishes"},
+            {"text":"Malfunction","value":"Malfunction","valdn":""},
         
-            {"text":"Lack of time","value":"Lack of time"},
+            {"text":"Recent surgery","value":"Recent surgery","valdn":""},
         
-            {"text":"Feeling unwell","value":"Feeling unwell"},
+            {"text":"Equipment failure","value":"Equipment failure","valdn":""},
         
-            {"text":"Other health reason","value":"Other health reason"},
+            {"text":"Other health reason","value":"Other health reason","valdn":""},
         
-            {"text":"Equipment failure","value":"Equipment failure"},
+            {"text":"Against participant wishes","value":"Against participant wishes","valdn":""},
         
-            {"text":"Malfunction","value":"Malfunction"},
+            {"text":"Feeling unwell","value":"Feeling unwell","valdn":""},
         
-            {"text":"Not available","value":"Not available"},
+            {"text":"Unable to grip","value":"Unable to grip","valdn":""},
         
-            {"text":"Unable","value":"Unable"},
+            {"text":"Arthritis","value":"Arthritis","valdn":""},
         
-            {"text":"Above max weight","value":"Above max weight"},
-        
-            {"text":"Amputee","value":"Amputee"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Pregnant","value":"Pregnant"},
-        
-            {"text":"Unable to grip","value":"Unable to grip"},
-        
-            {"text":"Unable to remove shoes/socks","value":"Unable to remove shoes/socks"},
-        
-            {"text":"Wheelchair user/unable to stand","value":"Wheelchair user/unable to stand"},
-        
-            {"text":"Asthma/lung disease","value":"Asthma/lung disease"},
-        
-            {"text":"Unable to understand instructions","value":"Unable to understand instructions"},
-        
-            {"text":"Physically unable","value":"Physically unable"},
-        
-            {"text":"Previous measures unavailable","value":"Previous measures unavailable"},
-        
-            {"text":"Arthritis","value":"Arthritis"},
-        
-            {"text":"Recent surgery","value":"Recent surgery"},
-        
-            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis"},
-        
-            {"text":"Above max measurement","value":"Above max measurement"},
-        
-            {"text":"Colostomy bag","value":"Colostomy bag"},
-        
-            {"text":"Below minimum height scale","value":"Below minimum height scale"},
-        
-            {"text":"Unable to sit","value":"Unable to sit"},
-        
-            {"text":"Nurse Advised not to perform","value":"Nurse Advised not to perform"},
-        
-            {"text":"Chest infection","value":"Chest infection"},
-        
-            {"text":"Collapsed lung","value":"Collapsed lung"},
-        
-            {"text":"Heart problems","value":"Heart problems"},
-        
-            {"text":"High BP","value":"High BP"},
-        
-            {"text":"Retinal detachment/eye problems","value":"Retinal detachment/eye problems"},
-        
-            {"text":"Tuberculosis","value":"Tuberculosis"}
+            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1022,12 +454,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         },
 
 
@@ -1037,89 +473,45 @@
         "type":"dropdown",
         "valdn":"required",
         "label":"Why Leftt Grip strength not measured ",
-        "flow":"data.leftGripStrength=='#'",
+        "flow":"data.leftGripStrength=='0'",
         "value":"",
         "items":[
         
-            {"text":"Declined","value":"Declined"},
+            {"text":"Amputee","value":"Amputee","valdn":""},
         
-            {"text":"Against participant wishes","value":"Against participant wishes"},
+            {"text":"Malfunction","value":"Malfunction","valdn":""},
         
-            {"text":"Lack of time","value":"Lack of time"},
+            {"text":"Recent surgery","value":"Recent surgery","valdn":""},
         
-            {"text":"Feeling unwell","value":"Feeling unwell"},
+            {"text":"Equipment failure","value":"Equipment failure","valdn":""},
         
-            {"text":"Other health reason","value":"Other health reason"},
+            {"text":"Other health reason","value":"Other health reason","valdn":""},
         
-            {"text":"Equipment failure","value":"Equipment failure"},
+            {"text":"Against participant wishes","value":"Against participant wishes","valdn":""},
         
-            {"text":"Malfunction","value":"Malfunction"},
+            {"text":"Feeling unwell","value":"Feeling unwell","valdn":""},
         
-            {"text":"Not available","value":"Not available"},
+            {"text":"Unable to grip","value":"Unable to grip","valdn":""},
         
-            {"text":"Unable","value":"Unable"},
+            {"text":"Arthritis","value":"Arthritis","valdn":""},
         
-            {"text":"Above max weight","value":"Above max weight"},
-        
-            {"text":"Amputee","value":"Amputee"},
-        
-            {"text":"Other health reason","value":"Other health reason"},
-        
-            {"text":"Pregnant","value":"Pregnant"},
-        
-            {"text":"Unable to grip","value":"Unable to grip"},
-        
-            {"text":"Unable to remove shoes/socks","value":"Unable to remove shoes/socks"},
-        
-            {"text":"Wheelchair user/unable to stand","value":"Wheelchair user/unable to stand"},
-        
-            {"text":"Asthma/lung disease","value":"Asthma/lung disease"},
-        
-            {"text":"Unable to understand instructions","value":"Unable to understand instructions"},
-        
-            {"text":"Physically unable","value":"Physically unable"},
-        
-            {"text":"Previous measures unavailable","value":"Previous measures unavailable"},
-        
-            {"text":"Arthritis","value":"Arthritis"},
-        
-            {"text":"Recent surgery","value":"Recent surgery"},
-        
-            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis"},
-        
-            {"text":"Above max measurement","value":"Above max measurement"},
-        
-            {"text":"Colostomy bag","value":"Colostomy bag"},
-        
-            {"text":"Below minimum height scale","value":"Below minimum height scale"},
-        
-            {"text":"Unable to sit","value":"Unable to sit"},
-        
-            {"text":"Nurse Advised not to perform","value":"Nurse Advised not to perform"},
-        
-            {"text":"Chest infection","value":"Chest infection"},
-        
-            {"text":"Collapsed lung","value":"Collapsed lung"},
-        
-            {"text":"Heart problems","value":"Heart problems"},
-        
-            {"text":"High BP","value":"High BP"},
-        
-            {"text":"Retinal detachment/eye problems","value":"Retinal detachment/eye problems"},
-        
-            {"text":"Tuberculosis","value":"Tuberculosis"}
+            {"text":"Stroke/weakness/paralysis","value":"Stroke/weakness/paralysis","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
-        }
+        },
+        "help":""
         }
 
 

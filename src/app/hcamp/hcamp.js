@@ -1,4 +1,4 @@
-angular.module('myApp.hcamp', ['ui.router', 'routeConfigHandler', 'appRoutes', 'toaster', 'appDefaultConfig', 'appService', 'stateTransitions'])
+angular.module('myApp.hcamp', ['ui.router', 'routeConfigHandler', 'appRoutes', 'toaster', 'appService', 'stateTransitions'])
     .config(function ($stateProvider, hcampRoutes, RouteConfigHandler) {
 
         $stateProvider.state(hcampRoutes.name, {
@@ -9,7 +9,7 @@ angular.module('myApp.hcamp', ['ui.router', 'routeConfigHandler', 'appRoutes', '
         RouteConfigHandler.configureRoutesForChildren($stateProvider, hcampRoutes.name, hcampRoutes.children);
 
     })
-    .controller('hcampCtrl', function ($scope, $location, StateTransitions, $state, $stateParams, $rootScope, $log, AppService, $http, AppDefaultConfig, toaster) {
+    .controller('hcampCtrl', function ($scope, $location, StateTransitions, $state, $stateParams, $rootScope, $log, AppService, $http, toaster) {
 
         //Scan Barcode for identifying participant either invitation card or wrist band
         $scope.scanBarcode = function (barcode) {
@@ -24,8 +24,16 @@ angular.module('myApp.hcamp', ['ui.router', 'routeConfigHandler', 'appRoutes', '
 
                     if (!$state.includes('hcamp.wrkstn1')) {
                         $location.path($location.url() + '/participant/' + memberId);
+                        AppService.getBasicInfo(memberId).then(function (resp) {
+                            console.log(resp.data);
+                            $rootScope.person = resp.data;
+                        });
                     } else {
                         $location.path($location.url() + '/participant/' + memberId);
+                        AppService.getBasicInfo(memberId).then(function (resp) {
+                            console.log(resp.data);
+                            $rootScope.person = resp.data;
+                        });
                     }
 
                 }, function () {
@@ -53,7 +61,7 @@ angular.module('myApp.hcamp', ['ui.router', 'routeConfigHandler', 'appRoutes', '
             angular.noop = (cleanUp === true) ? cleanUpData() : angular.noop;
 
             function cleanUpData() {
-                $http.get(AppDefaultConfig.serviceBaseUrl + 'api/rest/cleanUp').then(function () {
+                $http.get('api/rest/cleanUp').then(function () {
                     toaster.pop('info', '', 'Cleanup Successful !');
                 });
             }

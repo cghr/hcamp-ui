@@ -16,11 +16,12 @@
             <ul class="dropdown-menu">
               <li class="nav-header">Workstations</li>
               <li><a href="#/hcamp/wrkstn/1">Registration</a></li>
-                <li><a href="#/hcamp/wrkstn/2">BP/Physical Measurements/Grip Strength</a></li>
-                <li><a href="#/hcamp/wrkstn/3">Body Impedance</a></li>
-                <li><a href="#/hcamp/wrkstn/4">Spirometry</a></li>
-                <li><a href="#/hcamp/wrkstn/5">Sample Collection</a></li>
-                <li><a href="#/hcamp/wrkstn/6">Report Card</a></li>
+                <li><a href="#/hcamp/wrkstn/2">BP/Grip Strength</a></li>
+                <li><a href="#/hcamp/wrkstn/3">Physical Measurements</a></li>
+                <li><a href="#/hcamp/wrkstn/4">Body Impedance</a></li>
+                <li><a href="#/hcamp/wrkstn/5">Spirometry</a></li>
+                <li><a href="#/hcamp/wrkstn/6">Sample Collection</a></li>
+                <li><a href="#/hcamp/wrkstn/7">Report Card</a></li>
 
             </ul>
           </li>
@@ -37,13 +38,13 @@
           <!-- <li>
             <a href='' ng-click='sync()'><i class='icon-refresh icon-white'></i> Synchronize</a>
           </li> -->
-           <li access-level="accessLevels.manager">
+           <li access-level="accessLevels.user">
             <a href='' ng-click='cleanUp()'><i class='icon-trash icon-white'></i> Cleanup</a>
           </li>
 
         </ul>
         <div >
-          <p class='navbar-text pull-right'><a href='' ng-click='logout()' class='navbar-link'><i class='icon-off icon-white'></i> Logout</a></p>
+          <p class='navbar-text pull-right'><a href='' ng-click='NavCtrl.logout()' class='navbar-link'><i class='icon-off icon-white'></i> Logout</a></p>
         </div>
 
       </div><!--/.nav-collapse -->

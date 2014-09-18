@@ -1,22 +1,25 @@
-angular.module('myApp.report', ['ui.router'])
+angular.module('report', ['ui.router', 'sideMenu'])
     .config(function ($stateProvider) {
 
         $stateProvider.state('report', {
-            url: '/report/:reportId',
-            templateUrl: 'report/report.tpl.html',
-            controller: 'ReportCtrl'
-        });
-    })
-    .controller('ReportCtrl', function ($scope) {
 
-        var gridWidth = window.innerWidth * 0.8 + 'px',
-            gridHeight = window.innerHeight * 0.8 + 'px';
-        $scope.reportOptions = {
+            url: '/report/:reportId',
+            templateUrl: 'report/report.html',
+            controller: 'ReportCtrl',
+            controllerAs: 'vm'
+
+        })
+    })
+    .controller('ReportCtrl', function ($window) {
+
+        var vm = this
+        vm.reportOptions = {
             skin: 'dhx_skyblue',
-            width: gridWidth,
-            height: gridHeight
-        };
-        $scope.reportMenu = [
+            width: $window.innerWidth * 0.8 + 'px',
+            height: $window.innerHeight * 0.8 + 'px'
+        }
+
+        vm.reportMenu = [
             {
                 id: 1,
                 label: 'Reports',
@@ -43,7 +46,5 @@ angular.module('myApp.report', ['ui.router'])
                     }
                 ]
             }
-        ];
-
-
-    });
+        ]
+    })

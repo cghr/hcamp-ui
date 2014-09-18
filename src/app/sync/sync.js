@@ -1,96 +1,107 @@
-angular.module('sync', ['appDefaultConfig', 'ui.bootstrap', 'toaster'])
+angular.module('sync', [ 'ui.bootstrap', 'toaster', 'progressService'])
     .config(function ($stateProvider) {
 
-        $stateProvider.state('sync', {
-            url: '/sync',
-            templateUrl: 'sync/sync.tpl.html'
-        });
+        $stateProvider
+            .state('sync', {
+                url: '/sync',
+                templateUrl: 'sync/sync.html'
+            });
     })
-    .controller('syncCtrl', function ($scope, progressService, $interval, toaster, $timeout) {
+    .controller('syncCtrl', function ($scope, ProgressService, $interval, toaster, $timeout) {
 
-        progressService.startSync().then(function (resp) {
+        $scope.hasTotal = {
+            downloads: false,
+            uploads: false,
+            fileUploads: false
+        }
+        $scope.total = {
+            downloads: undefined,
+            uploads: undefined,
+            fileUploads: undefined
+        }
 
-            $timeout(function () {
-                $interval.cancel($scope.ajaxPooling);
-                toaster.pop('success', '', 'Sync Completed');
-            }, 2000);
+        $scope.pending = {
+            downloads: undefined,
+            uploads: undefined,
+            fileUploads: undefined
+        }
 
-        });
 
-        progressService.downloadStatus().then(function (resp) {
+        ProgressService.startSync()
+            .then(function () {
+                $timeout.cancel($scope.progressUpdater)
+                toaster.pop('success', '', 'Sync Completed')
 
-            $scope.totalDownloads = resp.data;
-        });
-        progressService.uploadStatus().then(function (resp) {
+            }, function () {
+                $timeout.cancel($scope.progressUpdater)
+                toaster.pop('error', '', 'Failed to Synchronize')
 
-            $scope.totalUploads = parseInt(resp.data);
-            $scope.downloadPooling = $interval(function () {
-                progressService.uploadStatus().then(function (resp) {
-                    $scope.uploadProgress = ($scope.totalUploads - parseInt(resp.data)) / $scope.totalUploads * 100;
-                    if ($scope.downloadPooling == 100) {
-                        $interval.cancel($scope.downloadPooling);
-                    }
-
-                });
-
-            }, 1000);
-        });
-        progressService.fileuploadStatus().then(function (resp) {
-
-            $scope.totalFileUploads = parseInt(resp.data);
-            $scope.fileUploadPooling = $interval(function () {
-                progressService.fileuploadStatus().then(function (resp) {
-                    $scope.fileUploadProgress = ($scope.totalFileUploads - parseInt(resp.data)) / $scope.totalFileUploads * 100;
-                    if ($scope.fileUploadProgress == 100) {
-                        $interval.cancel($scope.fileUploadPooling);
-
-                    }
-
-                });
-            }, 1000);
-
-        });
-
-        $scope.gotTotalDownloads = false;
-        $scope.ajaxPooling = $interval(function () {
-
-            progressService.downloadStatus().then(function (resp) {
-                var downloadCount = parseInt(resp.data);
-                if (downloadCount > 0 && !$scope.gotTotalDownloads) {
-                    $scope.totalDownloads = downloadCount;
-                    $scope.gotTotalDownloads = true;
-
-                }
-                $scope.downloadProgress = ($scope.totalDownloads - parseInt(resp.data)) / $scope.totalDownloads * 100;
             });
 
+        $scope.progressUpdater = $interval(function () {
+            updateProgress()
+        }, 1500)
 
-        }, 1000);
+        function updateProgress() {
 
-    })
-    .service('progressService', function ($http, AppDefaultConfig) {
+            updateDownloadStatus()
+            updateUploadStatus()
+            updateFileUploadStatus()
 
-        var config = {
-            sync: 'api/sync/dataSync',
-            downloadPath: 'api/sync/status/download',
-            uploadPath: 'api/sync/status/upload',
-            fileuploadPath: 'api/sync/status/fileupload'
-        };
-        var serverUrl = AppDefaultConfig.serviceBaseUrl;
-        return {
-            startSync: function () {
-                return $http.get(serverUrl + config.sync);
-            },
-            downloadStatus: function downloadStatus() {
+        }
 
-                return $http.get(serverUrl + config.downloadPath);
-            },
-            uploadStatus: function uploadStatus() {
-                return $http.get(serverUrl + config.uploadPath);
-            },
-            fileuploadStatus: function fileuploadStatus() {
-                return $http.get(serverUrl + config.fileuploadPath);
-            }
-        };
+        function updateDownloadStatus() {
+
+            ProgressService.getDownloadStatus()
+                .then(function () {
+
+                    if (!$scope.hasTotal.downloads)
+                        updateTotalDownloads()
+                    else
+                        $scope.pending.downloads = ($scope.total.downloads) - (ProgressService.downloadStatus)
+
+                })
+        }
+
+        function updateTotalDownloads() {
+            $scope.total.downlodas = ProgressService.downloadStatus
+            $scope.hasTotal.downloads = true
+        }
+
+
+        function updateUploadStatus() {
+
+            ProgressService.getUploadStatus()
+                .then(function () {
+                    if (!$scope.total.uploads)
+                        updateTotalUploads()
+                    else
+                        $scope.pending.uplodas = ($scope.total.uploads) - (ProgressService.uploadStatus)
+                })
+        }
+
+        function updateTotalUploads() {
+            $scope.total.uploads = ProgressService.uploadStatus
+            $scope.hasTotal.uploads = true
+        }
+
+        function updateFileUploadStatus() {
+
+            ProgressService.getFileUploadStatus()
+                .then(function () {
+                    if (!$scope.total.fileUploads)
+                        updateTotalFileUploads()
+                    else
+                        $scope.pending.FileUploads = ($scope.total.fileUploads) - (ProgressService.fileuploadStatus)
+                })
+
+        }
+
+
+        function updateTotalFileUploads() {
+            $scope.totalFileUploads = ProgressService.fileuploadStatus
+            $scope.total.fileUploads = true
+        }
+
 
     });

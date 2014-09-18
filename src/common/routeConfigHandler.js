@@ -11,6 +11,8 @@ angular.module('routeConfigHandler', [])
                     title: child.title,
                     addNew: child.addNew,
                     abstract: angular.isDefined(child.children) ? true : false,
+                    msg: child.msg,
+                    stateChangeStartMsg: child.stateChangeStartMsg,
                     data: child.children ? self.getData(child, children, parentState) : {}
                 });
                 if (child.children) {
